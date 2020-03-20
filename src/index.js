@@ -1,17 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import { createStore } from "redux"
-import { Provider } from "react-redux"
-import { AdditionalFeaturesReducer } from "./reducers/AdditionalFeaturesReducer";
+
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
+
+import { carReducer } from './reducers/carReducer';
 
 import 'bulma/css/bulma.css';
 import './styles.scss';
 
-const store = createStore(AdditionalFeaturesReducer)
+const store = createStore(carReducer);
 
 const rootElement = document.getElementById('root');
 ReactDOM.render(
-<Provider store={store}>
-<App />
-</Provider>, rootElement);
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	rootElement
+);
